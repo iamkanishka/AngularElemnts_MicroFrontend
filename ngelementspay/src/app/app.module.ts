@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Injector, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -8,6 +8,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
+import { createCustomElement } from '@angular/elements';
 
 
 
@@ -27,6 +28,15 @@ import {MatInputModule} from '@angular/material/input';
     MatInputModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+ // bootstrap: [AppComponent]
+ entryComponents:[AppComponent,DialogAnimationsExampleDialog]
 })
-export class AppModule { }
+export class AppModule { 
+constructor(private injector:Injector){}
+
+ngDoBootstrap(){
+  const element = createCustomElement(AppComponent,{injector:this.injector})
+  customElements.define('app-myPay',element)
+}
+
+}

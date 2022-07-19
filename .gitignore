@@ -30,7 +30,7 @@ yarn-error.log
 .history/*
 
 # Miscellaneous
-ngelementspay/.angular/
+ngelementspay/.angular/cache
 .sass-cache/
 /connect.lock
 /coverage
