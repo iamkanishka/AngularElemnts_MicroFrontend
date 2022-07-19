@@ -36,7 +36,7 @@ constructor(private injector:Injector){}
 
 ngDoBootstrap(){
   const element = createCustomElement(AppComponent,{injector:this.injector})
-  customElements.define('app-myPay',element)
+  customElements.define('app-mypay',element)
 }
 
 }
