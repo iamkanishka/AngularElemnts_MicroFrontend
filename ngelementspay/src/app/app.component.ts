@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import {MatDialog, MatDialogRef} from '@angular/material/dialog';
@@ -16,12 +16,16 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ngelementspay';
+  @Input() payButtonPosition:String | undefined  
+
+
   constructor(public dialog: MatDialog) {}
 
   openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
     this.dialog.open(DialogAnimationsExampleDialog, {
-      width: '250px',
+      width: '500px',
+      hasBackdrop:true,
+      height:'500px',
       enterAnimationDuration,
       exitAnimationDuration,
     });

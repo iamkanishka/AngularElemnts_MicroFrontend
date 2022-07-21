@@ -4,6 +4,7 @@ const concat = require('concat');
     "./dist/ngelementspay/runtime.js",
     "./dist/ngelementspay/polyfills.js",
     "./dist/ngelementspay/main.js",
+   
  ]
  await concat(files,'./app-mypay.js');
 })();
