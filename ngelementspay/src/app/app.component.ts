@@ -16,7 +16,13 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  @Input() payButtonPosition:String | undefined  
+  @Input() payButtonPosition:String | undefined
+  @Input() payConfig:Object | undefined ={
+      apiKey : '123445',
+      apiServerKey:'344563456234554',
+
+  }
+
 
 
   constructor(public dialog: MatDialog) {}

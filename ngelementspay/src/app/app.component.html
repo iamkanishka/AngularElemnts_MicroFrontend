@@ -1,7 +1,7 @@
-<div>
+<div [ngClass]="{'alignPayButtonCenter': payButtonPosition === 'center', 'alignPayButtonStart' : payButtonPosition === 'start','alignPayButtonEnd' : payButtonPosition === 'end' }">
     <button mat-raised-button color="primary" (click)="openDialog('0ms', '0ms')">Pay</button>
 
 </div>
-<p>Hi Kniasghka</p>
+
 
 <!-- <app-mypay></app-mypay> -->
