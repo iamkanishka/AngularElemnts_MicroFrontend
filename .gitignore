@@ -8,8 +8,9 @@
 
 # Node
 ngelementspay/node_modules/
-testmicofronendtsx/node_modules/
+server-ngElements/node_modules/
 testmicofronendjsx/node_modules/
+
 
 npm-debug.log
 yarn-error.log
