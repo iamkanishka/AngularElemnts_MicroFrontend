@@ -6,11 +6,13 @@
 
 .alignPayButtonEnd{
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: flex-end;
 }
 .alignPayButtonStart{
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: flex-start;
 }
+
+

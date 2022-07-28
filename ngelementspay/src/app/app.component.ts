@@ -17,11 +17,13 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class AppComponent {
   @Input() payButtonPosition:String | undefined
-  @Input() payConfig:Object | undefined ={
-      apiKey : '123445',
-      apiServerKey:'344563456234554',
+  @Input() payConfig:Object | undefined
+  //=
+  // {
+  //     apiKey : '123445',
+  //     apiServerKey:'344563456234554',
 
-  }
+  // }
 
 
 
@@ -31,7 +33,7 @@ export class AppComponent {
     this.dialog.open(DialogAnimationsExampleDialog, {
       width: '500px',
       hasBackdrop:true,
-      height:'500px',
+      height:'auto',
       enterAnimationDuration,
       exitAnimationDuration,
     });
@@ -43,10 +45,12 @@ export class AppComponent {
 @Component({
   selector: 'dialog-animations-example-dialog',
   templateUrl: 'dialog-animations-example-dialog.html',
+  styleUrls: ['./app.component.scss']
+
 })
 export class DialogAnimationsExampleDialog {
   constructor(public dialogRef: MatDialogRef<DialogAnimationsExampleDialog>) {}
-  emailFormControl = new FormControl('', [Validators.required, Validators.email]);
+  phoneFormControl = new FormControl('', [Validators.required, Validators.pattern(new RegExp("[0-9 ]{10}"))]);
 
   matcher = new MyErrorStateMatcher();
 }

@@ -10,7 +10,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { createCustomElement } from '@angular/elements';
 import { APP_BASE_HREF } from '@angular/common';
-
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 
 @NgModule({
@@ -26,7 +26,8 @@ import { APP_BASE_HREF } from '@angular/common';
     MatButtonModule,
     ReactiveFormsModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    MatToolbarModule
   ],
 
   //Note:- Add this Below Provider while building the angular material for the  React Application
@@ -38,20 +39,20 @@ import { APP_BASE_HREF } from '@angular/common';
   //While Building the angular Element the boostrap value should be  commmented Out
   bootstrap: [AppComponent],
 
-  //Note:- Since Integration of Angular Elements Based Application as Element then the Angular Doset ecognize that as Standardized Element 
+  //Note:- Since Integration of Angular Elements Based Application as Element then the Angular Doset ecognize that as Standardized Element
   //       So we need to Provide the Hint that  by allowing the Custom Element Schema
   //schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 
-  //Note:- While Building the Angular Elements Application, Make Sure that the whichever the components needs to be exposed should be 
+  //Note:- While Building the Angular Elements Application, Make Sure that the whichever the components needs to be exposed should be
   //  Defined in the entryComponents
   //entryComponents: [AppComponent, DialogAnimationsExampleDialog]
 })
 export class AppModule {
   constructor(private injector: Injector) { }
 
-  ngDoBootstrap() {
-    const element = createCustomElement(AppComponent, { injector: this.injector })
-    customElements.define('app-mypay', element)
-  }
+  // ngDoBootstrap() {
+  //   const element = createCustomElement(AppComponent, { injector: this.injector })
+  //   customElements.define('app-mypay', element)
+  // }
 
 }
